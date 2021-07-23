@@ -1,2 +1,2 @@
-# Workout-Generator
-App that you can use to generate workouts based on time, workout type and equipment. 
+# Recipe Generator
+App that you can use to generate recipes based on available ingredients. 
