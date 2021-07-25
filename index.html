@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Recipe Generator</title>
   </head>
   <body>
-    <h1>Recipe Generator</h1>
+    <header>
+      <h1>Recipe Generator</h1>
+    </header>
     <div>
+      <!-- Enter Ingredients section w/ Ingredient submit form -->
       <h2>Enter the Ingredients you have to make a meal!</h2>
       <form>
         <input id="ing-input" type="text" placeholder="Flour, Eggs, etc." />
@@ -16,6 +20,20 @@
           <button id="submit-btn" type="submit">SUBMIT</button>
         </div>
       </form>
+    </div>
+    <div>
+      <!-- Recipe Display Section -->
+      <h3>Display Recipe:</h3>
+      <h4 id="recipe-name"></h4>
+      <!-- Recipe Card Image. -->
+      <div>
+        <img
+          class="hide"
+          id="recImg"
+          src=""
+          alt="Picture of the Recipe and meal."
+        />
+      </div>
     </div>
     <script src="./assets/scritp.js"></script>
     <script

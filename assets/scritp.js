@@ -22,7 +22,7 @@ function getIngTextInput(e) {
   //for the getRecipe function.
   getRecipe(searchedIngs);
 }
-console.log("Your JS in linked");
+
 // api fetch to get the recipe for the ingredients list.
 function getRecipe(ings) {
   console.log("Test " + ings);
@@ -33,6 +33,37 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      //console.log(data);
+      // drilled down the data to get the recipe name (title) and saved that to the local var recName.
+      var recName = data[0].title;
+      //writes the recName to the HTML:
+      document.getElementById("recipe-name").innerHTML = recName;
+      // drilled down the data to get the recipe id (id) and saved that to the local var recId.
+      var recId = data[0].id;
+      //console.log(recId);
+      //pushing the recId to the getRecipeCard function as the argument.
+      getRecipeCard(recId);
+      //Call the getRecipeCard Function
+      getRecipeCard();
+    });
+}
+
+function getRecipeCard(recId) {
+  // api call to get the recipe card URL
+  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey}`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      //console.log(data);
+      //console.log(data.url);
+      var recCardURL = data.url;
+      console.log(recCardURL);
+      //created variable html elment to get the recCardPicEl
+      var recCardPicEl = document.getElementById("recImg");
+      //set the img source as the recCardURL.
+      recCardPicEl.src = recCardURL;
+      // removed the "hide" class so that the image will show when the recipe is searched.
+      recCardPicEl.removeAttribute("class", "hide");
     });
 }
