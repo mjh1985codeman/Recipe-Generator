@@ -1,9 +1,9 @@
-//1. Create event Listener for the Submit button to capture text input.
-//2. Capture Text Input (Ingredient List).
+//1. Create event Listener for the Submit button to capture text input. (done)
+//2. Capture Text Input (Ingredient List). (done)
 //3. Pass that Input to the API to get the Recipe List.
 
 //Global Variables:
-var apiKey = "";
+var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var ingredientList = [];
 var ingTextInput = document.getElementById("ing-input");
 
@@ -13,6 +13,7 @@ var submitButtonEl = document.getElementById("submit-btn");
 submitButtonEl.addEventListener("click", getIngTextInput);
 submitButtonEl.addEventListener("click", getRecipe);
 
+//Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
 function getIngTextInput(e) {
   e.preventDefault();
@@ -21,11 +22,17 @@ function getIngTextInput(e) {
   //for the getRecipe function.
   getRecipe(searchedIngs);
 }
-
-//Function to capture the searchedIngs as the "ingredients" argument for the
+console.log("Your JS in linked");
 // api fetch to get the recipe for the ingredients list.
 function getRecipe(ings) {
-  console.log(ings);
+  console.log("Test " + ings);
+  fetch(
+    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${ings}&number=1`
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
 }
-
-console.log("Your JS in linked");
