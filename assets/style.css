@@ -7,6 +7,12 @@
 .hide {
     display: none;
 }
+
+/* .rec-crd-img {
+    width: 50%;
+    height: 50%;
+} */
+
 header {
     display: flex;
 }
