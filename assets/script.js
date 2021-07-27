@@ -81,11 +81,12 @@ function getQuote() {
     .then(function (data) {
       console.log(data);
       var apiQuotes = data;
-      //console.log(apiQuotes);
-      //var apiQuotesArray = [];
-      for (var i = 0; i < apiQuotes.length; i += 50) {
-        console.log(data[i].text);
-        console.log(data[i].author);
+
+      for (var i = 0; i < apiQuotes.length; i++) {
+        //Stopped here for now as we got a for loop to get the quotes and turned them into strings in an array.
+        var quotesAndAuthors = [data[i].text + " - " + data[i].author];
+
+        console.log(quotesAndAuthors);
       }
     });
 }
