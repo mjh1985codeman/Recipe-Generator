@@ -4,7 +4,9 @@
 
 //Global Variables:
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
-var ingredientList = [];
+// back up apiKey to avoid quota issues.
+var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
+var apiKey3 = "";
 var ingTextInput = document.getElementById("ing-input");
 
 //Variable for Submit Button Element.
@@ -25,9 +27,9 @@ function getIngTextInput(e) {
 
 // api fetch to get the recipe for the ingredients list.
 function getRecipe(ings) {
-  console.log("Test " + ings);
+  //console.log("Test " + ings);
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${ings}&number=1`
+    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=1`
   )
     .then(function (response) {
       return response.json();
@@ -36,34 +38,32 @@ function getRecipe(ings) {
       //console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
+      //console.log(data);
+      //console.log(data[0].title);
+      //console.log(recName);
       //writes the recName to the HTML:
       document.getElementById("recipe-name").innerHTML = recName;
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = data[0].id;
-      //console.log(recId);
+      console.log(recId);
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
-      //Call the getRecipeCard Function
-      getRecipeCard();
     });
 }
 
 function getRecipeCard(recId) {
-  // api call to get the recipe card URL
-  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey}`)
+  // /api call to get the recipe card URL
+  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
-      //console.log(data.url);
       var recCardURL = data.url;
-      console.log(recCardURL);
       //created variable html elment to get the recCardPicEl
       var recCardPicEl = document.getElementById("recImg");
       //set the img source as the recCardURL.
       recCardPicEl.src = recCardURL;
-      // removed the "hide" class so that the image will show when the recipe is searched.
+      //  removed the "hide" class so that the image will show when the recipe is searched.
       recCardPicEl.removeAttribute("class", "hide");
     });
 }
