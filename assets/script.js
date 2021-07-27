@@ -37,7 +37,7 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      //console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //console.log(data);
@@ -61,8 +61,8 @@ function getRecipeCard(recId) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-      console.log(data.url);
+      //console.log(data);
+      //console.log(data.url);
       var recCardURL = data.url;
       //created variable html elment to get the recCardPicEl
       var recCardPicEl = document.getElementById("recImg");
@@ -72,16 +72,25 @@ function getRecipeCard(recId) {
       recCardPicEl.removeAttribute("class", "hide");
     });
 }
-fetch("https://qvoca-bestquotes-v1.p.rapidapi.com/quote", {
-  method: "GET",
-  headers: {
-    "x-rapidapi-key": "55770d358dmsh15fc69dde9bac90p10a52fjsn28edd9926fa1",
-    "x-rapidapi-host": "qvoca-bestquotes-v1.p.rapidapi.com",
-  },
-})
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// Second API.
+function getQuote() {
+  fetch("https://type.fit/api/quotes")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var apiQuotes = data;
+
+      for (var i = 0; i < apiQuotes.length; i++) {
+        //Stopped here for now as we got a for loop to get the quotes and turned them into strings in an array.
+        var quotesAndAuthors = [data[i].text + " - " + data[i].author];
+
+        console.log(quotesAndAuthors);
+      }
+    });
+}
+
+window.onload = function () {
+  getQuote();
+};
