@@ -67,3 +67,16 @@ function getRecipeCard(recId) {
       recCardPicEl.removeAttribute("class", "hide");
     });
 }
+fetch("https://qvoca-bestquotes-v1.p.rapidapi.com/quote", {
+  method: "GET",
+  headers: {
+    "x-rapidapi-key": "55770d358dmsh15fc69dde9bac90p10a52fjsn28edd9926fa1",
+    "x-rapidapi-host": "qvoca-bestquotes-v1.p.rapidapi.com",
+  },
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
