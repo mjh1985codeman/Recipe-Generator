@@ -4,13 +4,6 @@
     margin: 0;
     padding: 0;
 } 
-
-
-
-
-
-
-
 .hide {
     display: none;
 }
@@ -22,27 +15,31 @@ header h1 {
     font-family: 'Rock Salt', cursive;
     font-weight: bolder;
     font-size: 5vh;
-    width: 100%;
+    width: 80%;
+    margin-left: 20px;
 }
 header a {
-    /* background-color: red; */
-    /* width: 100%; */
-    /* display: flex; */
+    width: 30%;
 }
 header button {
     background-color: #C7FFD8;
     width: 10vw;
     height: 5vh;
-    border-radius: 20%;
-    justify-content: center;
-    margin: 6% 0 6% 10%;
-    /* margin-left: 50%;
-    margin-top: 27%; */
+    border-radius: 15%;
+    margin-left: 30%;
+    margin-top: 10%; 
+}
+h2 {
+    margin: 0 0 0 2px;
+}
+#ing-input {
+    width:100%;
+    margin: 10px 5px 0 3px;
 }
 #submit-btn {
     background-color: #C7FFD8;
     width: 10vw;
     height: 5vh;
-    border-radius: 20%;
-    margin: 6% 0 6% 10%;
+    border-radius: 15%;
+    margin: 10px 0 10px 3px;
 }
