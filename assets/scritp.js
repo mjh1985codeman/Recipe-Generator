@@ -4,12 +4,12 @@
 
 //Global Variables:
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
-var ingredientList = [];
+var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
-//Variable for saved recipe button 
+//Variable for saved recipe button
 var savedButtonEl = document.getElementById("saved-btn");
-//Event listener to go to saved recipe page. 
-savedButtonEl.addEventListener("click", );
+//Event listener to go to saved recipe page.
+//savedButtonEl.addEventListener("click");
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
@@ -31,13 +31,13 @@ function getIngTextInput(e) {
 function getRecipe(ings) {
   console.log("Test " + ings);
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${ings}&number=1`
+    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=1`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
+      console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //writes the recName to the HTML:
@@ -48,19 +48,18 @@ function getRecipe(ings) {
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
       //Call the getRecipeCard Function
-      getRecipeCard();
     });
 }
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
-  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey}`)
+  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
-      //console.log(data.url);
+      console.log(data);
+      console.log(data.url);
       var recCardURL = data.url;
       console.log(recCardURL);
       //created variable html elment to get the recCardPicEl
