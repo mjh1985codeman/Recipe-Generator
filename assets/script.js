@@ -4,10 +4,12 @@
 
 //Global Variables:
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
-// back up apiKey to avoid quota issues.
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
-var apiKey3 = "";
 var ingTextInput = document.getElementById("ing-input");
+//Variable for saved recipe button
+var savedButtonEl = document.getElementById("saved-btn");
+//Event listener to go to saved recipe page.
+//savedButtonEl.addEventListener("click");
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
@@ -35,7 +37,7 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
+      console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //console.log(data);
@@ -48,16 +50,19 @@ function getRecipe(ings) {
       console.log(recId);
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
+      //Call the getRecipeCard Function
     });
 }
 
 function getRecipeCard(recId) {
-  // /api call to get the recipe card URL
+  // api call to get the recipe card URL
   fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      console.log(data);
+      console.log(data.url);
       var recCardURL = data.url;
       //created variable html elment to get the recCardPicEl
       var recCardPicEl = document.getElementById("recImg");
