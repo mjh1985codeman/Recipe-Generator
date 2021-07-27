@@ -6,6 +6,10 @@
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var ingredientList = [];
 var ingTextInput = document.getElementById("ing-input");
+//Variable for saved recipe button 
+var savedButtonEl = document.getElementById("saved-btn");
+//Event listener to go to saved recipe page. 
+savedButtonEl.addEventListener("click", );
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
