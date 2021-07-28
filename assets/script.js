@@ -88,16 +88,16 @@ function getQuotes() {
         var quotesAndAuthors = JSON.stringify(
           data[i].text + " - " + data[i].author
         );
+        console.log(quotesAndAuthors);
+
         //pushed the quotesAndAuthors variable to the displayRandomQuote Function as the argument.
-        displayRandomQuote(quotesAndAuthors);
+        //displayRandomQuote(quotesAndAuthors);
       }
     });
 }
 
-function displayRandomQuote(quotesAndAuthors) {
-  //console.log(quotesAndAuthors);
-  randomQuoteArray = [quotesAndAuthors];
-  console.log(randomQuoteArray);
+function displayRandomQuote() {
+  console.log("Random Quote");
 }
 
 window.onload = function () {
