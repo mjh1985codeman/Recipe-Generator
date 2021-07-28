@@ -17,6 +17,22 @@ var submitButtonEl = document.getElementById("submit-btn");
 submitButtonEl.addEventListener("click", getIngTextInput);
 submitButtonEl.addEventListener("click", getRecipe);
 
+//Variable for saved recipe button
+const savedButtonEl = document.getElementById("saved-btn");
+ 
+//function for the saved recipe button
+function doSaveAs(){
+ if (document.execCommand){
+   document.execCommand("SaveAs")
+ }
+ else {
+   alert("Save-feature available only in Internet Explorer 5.x.")
+ }
+}
+ 
+//event listener for saved button
+savedButtonEl.addEventListener("click", save);
+
 //Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
 function getIngTextInput(e) {

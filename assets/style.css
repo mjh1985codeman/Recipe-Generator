@@ -28,7 +28,7 @@ header h1 {
 header a {
   width: 30%;
 }
-header button {
+header #saved-btn {
   background-color: #c7ffd8;
   width: 10vw;
   height: 5vh;
@@ -44,13 +44,6 @@ h2 {
   margin: 10px 5px 0 3px;
 }
 #submit-btn {
-<<<<<<< HEAD
-    background-color: #C7FFD8;
-    width: 10vw;
-    height: 5vh;
-    border-radius: 15%;
-    margin: 10px 0 10px 3px;
-=======
   background-color: #c7ffd8;
   width: 10vw;
   height: 5vh;
@@ -60,5 +53,4 @@ h2 {
 #ing-input {
   padding: 15px 15px;
   width: 500px;
->>>>>>> css/2ndapi
 }
