@@ -2,6 +2,7 @@
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
+var savedRecipes = [];
 //Variable for saved recipe button
 var savedButtonEl = document.getElementById("saved-btn");
 //Event listener to go to saved recipe page.
@@ -39,7 +40,7 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
+      console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //console.log(data);
@@ -51,11 +52,29 @@ function getRecipe(ings) {
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = data[0].id;
       console.log(recId);
+      var recObj = {
+        name: recName,
+        id: recId,
+      };
+
+      addToSaved(recObj);
+      //Saving the Recipe Name and Id to local Storage:
+
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
       //Call the getRecipeCard Function
     });
 }
+
+function addToSaved(saved) {
+  if (savedRecipes.indexOf(saved) !== -1) {
+    return;
+  }
+  savedRecipes.push(saved);
+  localStorage.setItem("saved-recipes", JSON.stringify(savedRecipes));
+}
+
+console.log(savedRecipes);
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
@@ -76,6 +95,9 @@ function getRecipeCard(recId) {
       saveRecButtonEl.removeAttribute("class", "hide");
     });
 }
+
+//Function to store recipes to local storage.
+
 // Second API (function to get the data from the api (quotes)).
 function getQuotes() {
   fetch("https://type.fit/api/quotes")
@@ -114,8 +136,3 @@ window.onload = function () {
   getQuotes();
   displayRandomQuote();
 };
-
-//function to save the recipe.
-function saveRecipe() {
-  console.log("You clicked a button");
-}
