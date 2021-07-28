@@ -1,7 +1,3 @@
-//1. Create event Listener for the Submit button to capture text input. (done)
-//2. Capture Text Input (Ingredient List). (done)
-//3. Pass that Input to the API to get the Recipe List.
-
 //Global Variables:
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
@@ -10,12 +6,16 @@ var ingTextInput = document.getElementById("ing-input");
 var savedButtonEl = document.getElementById("saved-btn");
 //Event listener to go to saved recipe page.
 //savedButtonEl.addEventListener("click");
+var saveRecButtonEl = document.getElementById("sav-rec-btn");
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
 //Event Listener for submitButtonEl variable to call getIngTextInput Function.
 submitButtonEl.addEventListener("click", getIngTextInput);
 submitButtonEl.addEventListener("click", getRecipe);
+
+//Event Listener for saveRecButtonEl.
+saveRecButtonEl.addEventListener("click", saveRecipe);
 
 //Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
@@ -70,27 +70,42 @@ function getRecipeCard(recId) {
       recCardPicEl.src = recCardURL;
       //  removed the "hide" class so that the image will show when the recipe is searched.
       recCardPicEl.removeAttribute("class", "hide");
+      saveRecButtonEl.removeAttribute("class", "hide");
     });
 }
-// Second API.
-function getQuote() {
+// Second API (function to get the data from the api (quotes)).
+function getQuotes() {
   fetch("https://type.fit/api/quotes")
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      //console.log(data);
       var apiQuotes = data;
-
+      //created for loop to loop over the array of objects and get the text from them.
       for (var i = 0; i < apiQuotes.length; i++) {
-        //Stopped here for now as we got a for loop to get the quotes and turned them into strings in an array.
-        var quotesAndAuthors = [data[i].text + " - " + data[i].author];
-
-        console.log(quotesAndAuthors);
+        // combined the quote (data.text) and the author (data.author) and saved that as a variable.
+        var quotesAndAuthors = JSON.stringify(
+          data[i].text + " - " + data[i].author
+        );
+        //pushed the quotesAndAuthors variable to the displayRandomQuote Function as the argument.
+        displayRandomQuote(quotesAndAuthors);
       }
     });
 }
 
+function displayRandomQuote(quotesAndAuthors) {
+  //console.log(quotesAndAuthors);
+  randomQuoteArray = [quotesAndAuthors];
+  console.log(randomQuoteArray);
+}
+
 window.onload = function () {
-  getQuote();
+  getQuotes();
+  displayRandomQuote();
 };
+
+//function to save the recipe.
+function saveRecipe() {
+  console.log("You clicked a button");
+}
