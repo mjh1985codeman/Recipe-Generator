@@ -7,6 +7,8 @@ var savedButtonEl = document.getElementById("saved-btn");
 //Event listener to go to saved recipe page.
 //savedButtonEl.addEventListener("click");
 var saveRecButtonEl = document.getElementById("sav-rec-btn");
+//variable for the quote element.
+var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
@@ -90,21 +92,24 @@ function getQuotes() {
         var quotesAndAuthors = JSON.stringify(
           data[i].text + " - " + data[i].author
         );
+        // This pushes the quotesAndAuthors into an array called randomQuoteArray
         randomQuoteArray.push(quotesAndAuthors);
-
-        //pushed the quotesAndAuthors variable to the displayRandomQuote Function as the argument.
-        //displayRandomQuote(quotesAndAuthors);
       }
+      //created randomQuote variable using the randomQuoteArray and the Math.random array method
+      //to pull out a random quote of the array.
       var randomQuote =
         randomQuoteArray[Math.floor(Math.random() * randomQuoteArray.length)];
+      //the pushes the randomQuote variable as the argument for the displayRandomQuote Function.
       displayRandomQuote(randomQuote);
     });
 }
-
+// This function takes the random quote and writes it to the page.
 function displayRandomQuote(randomQuoteData) {
   console.log(randomQuoteData);
+  quoteOfTheDayEl.innerHTML = randomQuoteData;
 }
 
+//functions that run when the page is loaded.
 window.onload = function () {
   getQuotes();
   displayRandomQuote();
