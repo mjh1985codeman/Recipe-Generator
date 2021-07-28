@@ -12,7 +12,7 @@ var saveRecButtonEl = document.getElementById("sav-rec-btn");
 var submitButtonEl = document.getElementById("submit-btn");
 //Event Listener for submitButtonEl variable to call getIngTextInput Function.
 submitButtonEl.addEventListener("click", getIngTextInput);
-submitButtonEl.addEventListener("click", getRecipe);
+// submitButtonEl.addEventListener("click", getRecipe);
 
 //Event Listener for saveRecButtonEl.
 saveRecButtonEl.addEventListener("click", saveRecipe);
@@ -29,7 +29,7 @@ function getIngTextInput(e) {
 
 // api fetch to get the recipe for the ingredients list.
 function getRecipe(ings) {
-  //console.log("Test " + ings);
+  console.log("Test " + ings);
   fetch(
     `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=1`
   )
@@ -41,7 +41,8 @@ function getRecipe(ings) {
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //console.log(data);
-      //console.log(data[0].title);
+      console.log(data[0].title);
+      console.log(recName);
       //console.log(recName);
       //writes the recName to the HTML:
       document.getElementById("recipe-name").innerHTML = recName;
@@ -83,21 +84,25 @@ function getQuotes() {
       //console.log(data);
       var apiQuotes = data;
       //created for loop to loop over the array of objects and get the text from them.
+      var randomQuoteArray = [];
       for (var i = 0; i < apiQuotes.length; i++) {
         // combined the quote (data.text) and the author (data.author) and saved that as a variable.
         var quotesAndAuthors = JSON.stringify(
           data[i].text + " - " + data[i].author
         );
-        console.log(quotesAndAuthors);
+        randomQuoteArray.push(quotesAndAuthors);
 
         //pushed the quotesAndAuthors variable to the displayRandomQuote Function as the argument.
         //displayRandomQuote(quotesAndAuthors);
       }
+      var randomQuote =
+        randomQuoteArray[Math.floor(Math.random() * randomQuoteArray.length)];
+      displayRandomQuote(randomQuote);
     });
 }
 
-function displayRandomQuote() {
-  console.log("Random Quote");
+function displayRandomQuote(randomQuoteData) {
+  console.log(randomQuoteData);
 }
 
 window.onload = function () {
