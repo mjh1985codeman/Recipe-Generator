@@ -28,7 +28,7 @@ header h1 {
 header a {
   width: 30%;
 }
-header #saved-btn {
+header button {
   background-color: #c7ffd8;
   width: 10vw;
   height: 5vh;
