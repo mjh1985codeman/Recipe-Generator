@@ -2,12 +2,10 @@
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
-var savedRecipes = [];
-//Variable for saved recipe button
-// var savedButtonEl = document.getElementById("saved-btn");
-//Event listener to go to saved recipe page.
-//savedButtonEl.addEventListener("click");
-var saveRecButtonEl = document.getElementById("sav-rec-btn");
+//set variable of savedRecipes to local storage OR an empty (if nothing is there)
+//to prevent local storage from saving as an empty array upon refresh and recipe search.
+var savedRecipes = JSON.parse(localStorage.getItem("saved-recipes") || "[]");
+console.log(savedRecipes);
 //variable for the quote element.
 var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 
@@ -15,26 +13,18 @@ var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 var submitButtonEl = document.getElementById("submit-btn");
 //Event Listener for submitButtonEl variable to call getIngTextInput Function.
 submitButtonEl.addEventListener("click", getIngTextInput);
-// submitButtonEl.addEventListener("click", getRecipe);
-
-//Event Listener for saveRecButtonEl.
-// saveRecButtonEl.addEventListener("click", saveRecipe);
 
 //Variable for saved recipe button
 const savedButtonEl = document.getElementById("saved-btn");
- 
+
 //function for the saved recipe button
-function doSaveAs(){
- if (document.execCommand){
-   document.execCommand("SaveAs")
- }
- else {
-   alert("Save-feature available only in Internet Explorer 5.x.")
- }
+function doSaveAs() {
+  if (document.execCommand) {
+    document.execCommand("SaveAs");
+  } else {
+    alert("Save-feature available only in Internet Explorer 5.x.");
+  }
 }
- 
-//event listener for saved button
-savedButtonEl.addEventListener("click", save);
 
 //Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
@@ -56,18 +46,18 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      //console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //console.log(data);
-      console.log(data[0].title);
-      console.log(recName);
+      //console.log(data[0].title);
+      //console.log(recName);
       //console.log(recName);
       //writes the recName to the HTML:
       document.getElementById("recipe-name").innerHTML = recName;
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = data[0].id;
-      console.log(recId);
+      //console.log(recId);
       //creating a recipe object variable to use w/ local storage.
       var recObj = {
         name: recName,
@@ -92,7 +82,7 @@ function addToSaved(saved) {
   localStorage.setItem("saved-recipes", JSON.stringify(savedRecipes));
 }
 
-console.log(savedRecipes);
+// console.log(savedRecipes);
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
