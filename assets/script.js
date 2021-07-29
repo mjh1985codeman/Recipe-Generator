@@ -7,7 +7,7 @@ var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
 //Variable for saved recipe button
-var savedButtonEl = document.getElementById("saved-btn");
+// var savedButtonEl = document.getElementById("saved-btn");
 //Event listener to go to saved recipe page.
 //savedButtonEl.addEventListener("click");
 
