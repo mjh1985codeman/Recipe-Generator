@@ -18,7 +18,7 @@ submitButtonEl.addEventListener("click", getIngTextInput);
 // submitButtonEl.addEventListener("click", getRecipe);
 
 //Event Listener for saveRecButtonEl.
-saveRecButtonEl.addEventListener("click", saveRecipe);
+// saveRecButtonEl.addEventListener("click", saveRecipe);
 
 //Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
@@ -52,13 +52,14 @@ function getRecipe(ings) {
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = data[0].id;
       console.log(recId);
+      //creating a recipe object variable to use w/ local storage.
       var recObj = {
         name: recName,
         id: recId,
       };
 
+      //pushing the recicpe object to the addToSaved Function.
       addToSaved(recObj);
-      //Saving the Recipe Name and Id to local Storage:
 
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
@@ -66,6 +67,7 @@ function getRecipe(ings) {
     });
 }
 
+//function to save the recipe title and id to local storage.
 function addToSaved(saved) {
   if (savedRecipes.indexOf(saved) !== -1) {
     return;
@@ -92,7 +94,6 @@ function getRecipeCard(recId) {
       recCardPicEl.src = recCardURL;
       //  removed the "hide" class so that the image will show when the recipe is searched.
       recCardPicEl.removeAttribute("class", "hide");
-      saveRecButtonEl.removeAttribute("class", "hide");
     });
 }
 
@@ -127,7 +128,7 @@ function getQuotes() {
 }
 // This function takes the random quote and writes it to the page.
 function displayRandomQuote(randomQuoteData) {
-  console.log(randomQuoteData);
+  //console.log(randomQuoteData);
   quoteOfTheDayEl.innerHTML = randomQuoteData;
 }
 
