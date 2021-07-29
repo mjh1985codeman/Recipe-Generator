@@ -2,10 +2,11 @@
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
-//set variable of savedRecipes to local storage OR an empty (if nothing is there)
-//to prevent local storage from saving as an empty array upon refresh and recipe search.
+
+//To prevent local storage from writing over itself upon refresh and recipe search.
+//Set the variable to get what is already in local storage or if nothing is there then it
+//establishes an empty array.
 var savedRecipes = JSON.parse(localStorage.getItem("saved-recipes") || "[]");
-console.log(savedRecipes);
 //variable for the quote element.
 var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 
@@ -46,19 +47,16 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
-      //console.log(data);
-      //console.log(data[0].title);
-      //console.log(recName);
-      //console.log(recName);
       //writes the recName to the HTML:
       document.getElementById("recipe-name").innerHTML = recName;
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = data[0].id;
-      //console.log(recId);
       //creating a recipe object variable to use w/ local storage.
+      //Name so we can use that on the localstorge.js file to display the name on the
+      //dynamically created buttons.  And the id as that is what the api requires to
+      //get the recipe card.
       var recObj = {
         name: recName,
         id: recId,
@@ -69,7 +67,6 @@ function getRecipe(ings) {
 
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
-      //Call the getRecipeCard Function
     });
 }
 
@@ -81,8 +78,6 @@ function addToSaved(saved) {
   savedRecipes.push(saved);
   localStorage.setItem("saved-recipes", JSON.stringify(savedRecipes));
 }
-
-// console.log(savedRecipes);
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
@@ -102,8 +97,6 @@ function getRecipeCard(recId) {
       recCardPicEl.removeAttribute("class", "hide");
     });
 }
-
-//Function to store recipes to local storage.
 
 // Second API (function to get the data from the api (quotes)).
 function getQuotes() {

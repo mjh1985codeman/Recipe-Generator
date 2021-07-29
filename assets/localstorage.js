@@ -19,36 +19,35 @@ function getLocalStorage() {
     var buttonOne = document.createElement("button");
     //created variable for recipe history div element.
     var buttonDiv = document.getElementById("saved-recipes-ls");
-    //setting each CREATED button w/ an id.
+    //setting each CREATED button w/ an id of the recipe name that matched up w/ the current index of the local
+    //storage array.
     buttonOne.setAttribute("id", loadedRecipes[i].name);
     //setting each dynamically created buttons with the text of it's current
     // loadedRecipes index.
     buttonOne.innerHTML = loadedRecipes[i].name;
-    // appending the dynamically created button to the HTML.
+    // appending the dynamically created button to the saved.html page.
     buttonDiv.appendChild(buttonOne);
     // setting up an "on click" attribute to run the displayRecipesAgain function
     buttonOne.setAttribute(
       "onclick",
+      //pushing the recipe id to the displayRecipesAgain function.
       "displayRecipesAgain('" + loadedRecipes[i].id + "')"
     );
   }
 }
 
 function displayRecipesAgain(recId) {
-  console.log("you clicked a button");
   fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data);
-      //console.log(data.url);
       var recCardURL = data.url;
       //created variable html elment to get the recCardPicEl
       var recCardPicEl = document.getElementById("recImg");
       //set the img source as the recCardURL.
       recCardPicEl.src = recCardURL;
-      //  removed the "hide" class so that the image will show when the recipe is searched.
+      //removed the "hide" class so that the image will show when the recipe is searched.
       recCardPicEl.removeAttribute("class", "hide");
     });
 }
