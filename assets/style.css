@@ -29,12 +29,17 @@ header a {
   width: 30%;
 }
 header button {
-  background-color: #c7ffd8;
+  background-color: limegreen;
   width: 10vw;
   height: 5vh;
   border-radius: 15%;
   margin-left: 30%;
   margin-top: 10%;
+  cursor: pointer;
+  transition: ease 0.3s all;
+}
+header button:hover {
+  background: orangered;
 }
 h2 {
   margin: 0 0 0 2px;
@@ -42,23 +47,27 @@ h2 {
 #ing-input {
   width: 100%;
   margin: 10px 5px 0 3px;
+  background: #f6f6f6;
 }
 #submit-btn {
-<<<<<<< HEAD
-    background-color: #C7FFD8;
-    width: 10vw;
-    height: 5vh;
-    border-radius: 15%;
-    margin: 10px 0 10px 3px;
-=======
-  background-color: #c7ffd8;
+  background-color: limegreen;
   width: 10vw;
   height: 5vh;
   border-radius: 15%;
   margin: 10px 0 10px 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#submit-btn:hover {
+  background: darkgreen;
 }
 #ing-input {
   padding: 15px 15px;
   width: 500px;
->>>>>>> css/2ndapi
+}
+#recipe-name {
+  display: none;
+}
+#recImg {
+  border: black 1px solid;
 }

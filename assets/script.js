@@ -4,7 +4,7 @@ var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
 var savedRecipes = [];
 //Variable for saved recipe button
-var savedButtonEl = document.getElementById("saved-btn");
+// var savedButtonEl = document.getElementById("saved-btn");
 //Event listener to go to saved recipe page.
 //savedButtonEl.addEventListener("click");
 var saveRecButtonEl = document.getElementById("sav-rec-btn");
@@ -19,6 +19,22 @@ submitButtonEl.addEventListener("click", getIngTextInput);
 
 //Event Listener for saveRecButtonEl.
 // saveRecButtonEl.addEventListener("click", saveRecipe);
+
+//Variable for saved recipe button
+const savedButtonEl = document.getElementById("saved-btn");
+ 
+//function for the saved recipe button
+function doSaveAs(){
+ if (document.execCommand){
+   document.execCommand("SaveAs")
+ }
+ else {
+   alert("Save-feature available only in Internet Explorer 5.x.")
+ }
+}
+ 
+//event listener for saved button
+savedButtonEl.addEventListener("click", save);
 
 //Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
