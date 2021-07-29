@@ -2,11 +2,10 @@
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
 var ingTextInput = document.getElementById("ing-input");
-//Variable for saved recipe button
-// var savedButtonEl = document.getElementById("saved-btn");
-//Event listener to go to saved recipe page.
-//savedButtonEl.addEventListener("click");
-var saveRecButtonEl = document.getElementById("sav-rec-btn");
+//set variable of savedRecipes to local storage OR an empty (if nothing is there)
+//to prevent local storage from saving as an empty array upon refresh and recipe search.
+var savedRecipes = JSON.parse(localStorage.getItem("saved-recipes") || "[]");
+console.log(savedRecipes);
 //variable for the quote element.
 var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 
@@ -14,10 +13,6 @@ var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 var submitButtonEl = document.getElementById("submit-btn");
 //Event Listener for submitButtonEl variable to call getIngTextInput Function.
 submitButtonEl.addEventListener("click", getIngTextInput);
-// submitButtonEl.addEventListener("click", getRecipe);
-
-//Event Listener for saveRecButtonEl.
-saveRecButtonEl.addEventListener("click", saveRecipe);
 
 //Variable for saved recipe button
 const savedButtonEl = document.getElementById("saved-btn");
@@ -30,9 +25,6 @@ function doSaveAs() {
     alert("Save-feature available only in Internet Explorer 5.x.");
   }
 }
-
-//event listener for saved button
-savedButtonEl.addEventListener("click", save);
 
 //Function to capture the searchedIngs as the "ingredients" argument for the
 //Function to capture Text Input and save that to a local variable searchedIngs
@@ -58,19 +50,39 @@ function getRecipe(ings) {
       // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       var recName = data[0].title;
       //console.log(data);
-      console.log(data[0].title);
-      console.log(recName);
+      //console.log(data[0].title);
+      //console.log(recName);
       //console.log(recName);
       //writes the recName to the HTML:
       document.getElementById("recipe-name").innerHTML = recName;
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = data[0].id;
-      console.log(recId);
+      //console.log(recId);
+      //creating a recipe object variable to use w/ local storage.
+      var recObj = {
+        name: recName,
+        id: recId,
+      };
+
+      //pushing the recicpe object to the addToSaved Function.
+      addToSaved(recObj);
+
       //pushing the recId to the getRecipeCard function as the argument.
       getRecipeCard(recId);
       //Call the getRecipeCard Function
     });
 }
+
+//function to save the recipe title and id to local storage.
+function addToSaved(saved) {
+  if (savedRecipes.indexOf(saved) !== -1) {
+    return;
+  }
+  savedRecipes.push(saved);
+  localStorage.setItem("saved-recipes", JSON.stringify(savedRecipes));
+}
+
+// console.log(savedRecipes);
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
@@ -88,9 +100,11 @@ function getRecipeCard(recId) {
       recCardPicEl.src = recCardURL;
       //  removed the "hide" class so that the image will show when the recipe is searched.
       recCardPicEl.removeAttribute("class", "hide");
-      saveRecButtonEl.removeAttribute("class", "hide");
     });
 }
+
+//Function to store recipes to local storage.
+
 // Second API (function to get the data from the api (quotes)).
 function getQuotes() {
   fetch("https://type.fit/api/quotes")
@@ -120,7 +134,7 @@ function getQuotes() {
 }
 // This function takes the random quote and writes it to the page.
 function displayRandomQuote(randomQuoteData) {
-  console.log(randomQuoteData);
+  //console.log(randomQuoteData);
   quoteOfTheDayEl.innerHTML = randomQuoteData;
 }
 
@@ -129,8 +143,3 @@ window.onload = function () {
   getQuotes();
   displayRandomQuote();
 };
-
-//function to save the recipe.
-function saveRecipe() {
-  console.log("You clicked a button");
-}
