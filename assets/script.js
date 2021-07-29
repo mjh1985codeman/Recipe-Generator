@@ -21,17 +21,16 @@ saveRecButtonEl.addEventListener("click", saveRecipe);
 
 //Variable for saved recipe button
 const savedButtonEl = document.getElementById("saved-btn");
- 
+
 //function for the saved recipe button
-function doSaveAs(){
- if (document.execCommand){
-   document.execCommand("SaveAs")
- }
- else {
-   alert("Save-feature available only in Internet Explorer 5.x.")
- }
+function doSaveAs() {
+  if (document.execCommand) {
+    document.execCommand("SaveAs");
+  } else {
+    alert("Save-feature available only in Internet Explorer 5.x.");
+  }
 }
- 
+
 //event listener for saved button
 savedButtonEl.addEventListener("click", save);
 
