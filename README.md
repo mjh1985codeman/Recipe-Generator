@@ -1,4 +1,4 @@
-# Recipe Generator
+# Recipe Generator/
 
 App that you can use to generate recipes based on available ingredients.
 
@@ -13,7 +13,7 @@ App that you can use to generate recipes based on available ingredients.
 - HTML
 - CSS
 - JavaScript
-- Bootscrap
+- Bootstrap
 
 ## Challenges
 
