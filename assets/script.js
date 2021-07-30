@@ -72,6 +72,7 @@ function getRecipe(ings) {
 
 //function to save the recipe title and id to local storage.
 function addToSaved(saved) {
+  // If index of savedRecipes is false then return
   if (savedRecipes.indexOf(saved) !== -1) {
     return;
   }
