@@ -1,10 +1,8 @@
-# Recipe Generator/
+# Recipe Generator
 
-App that you can use to generate recipes based on available ingredients.
+![recipe-generator-screenshot](https://user-images.githubusercontent.com/85079903/127736193-c19767a6-8fef-467d-b8ad-95bc11b00459.png)
 
-![Screenshot](./assets/images/recipe-generator-screenshot.PNG)
-
-# Purpose
+## Purpose
 
 App that you can use to generate recipes based on available ingredients.
 
