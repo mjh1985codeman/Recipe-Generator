@@ -1,6 +1,6 @@
 * {
   /* border: 1px solid black; */
-  margin: 7px 13px;
+  margin: 8px 13px;
   padding: 7px 8px 5px 3px;
   text-align: center;
 }
@@ -27,7 +27,7 @@ header {
 }
 
 header h1 {
-  color: khaki;
+  color: lightgoldenrodyellow;
   font-family: "Avanta Garde", cursive;
   font-size: 8vh;
   width: 253%;
@@ -68,6 +68,7 @@ h3 {
   width: 100%;
   margin: 10px 5px 0 3px;
   background: #f6f6f6;
+  font-size: 20px;
 }
 #submit-btn {
   background-color: yellow;
