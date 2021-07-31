@@ -1,8 +1,8 @@
 * {
   /* border: 1px solid black; */
-  background: beige;
-  margin: 0;
-  padding: 0;
+  margin: 8px 13px;
+  padding: 7px 8px 5px 3px;
+  text-align: center;
 }
 .hide {
   display: none;
@@ -13,53 +13,75 @@
     height: 50%;
 } */
 
+body {
+  margin: 73px 78px 5px 133px;
+  background-image: url(./images/img_cooking2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: ghostwhite;
+}
 header {
   display: flex;
 }
+
 header h1 {
-  color: #161d6f;
-  font-family: "Rock Salt", cursive;
-  font-weight: bolder;
-  font-size: 5vh;
-  width: 80%;
-  margin-left: 20px;
+  color: lightgoldenrodyellow;
+  font-family: "Avanta Garde", cursive;
+  font-size: 8vh;
+  width: 253%;
+  margin-left: 232px;
+  margin-bottom: 1.5rem;
   text-decoration: underline;
+  text-underline-position: from-font;
 }
 header a {
   width: 30%;
 }
 header button {
-  background-color: limegreen;
-  width: 10vw;
+  background-color: yellow;
+  width: 6vw;
   height: 5vh;
   border-radius: 15%;
-  margin-left: 30%;
-  margin-top: 10%;
+  margin-left: -283%;
+  margin-top: 15%;
+  margin-right: 19%;
   cursor: pointer;
   transition: ease 0.3s all;
+  font-size: large;
+  font-weight: 400;
 }
 header button:hover {
-  background: orangered;
+  background: goldenrod;
 }
 h2 {
-  margin: 0 0 0 2px;
+  margin: -7px 0 40px 10px;
+  color: lightyellow;
+}
+h3 {
+  font-size: 38px;
+  margin-bottom: 2.5rem;
+  font-family: monospace;
 }
 #ing-input {
   width: 100%;
   margin: 10px 5px 0 3px;
   background: #f6f6f6;
+  font-size: 20px;
 }
 #submit-btn {
-  background-color: limegreen;
-  width: 10vw;
+  background-color: yellow;
+  width: 8vw;
   height: 5vh;
   border-radius: 15%;
   margin: 10px 0 10px 3px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 50px;
 }
 #submit-btn:hover {
-  background: darkgreen;
+  background: goldenrod;
 }
 #ing-input {
   padding: 15px 15px;
@@ -69,5 +91,16 @@ h2 {
   display: none;
 }
 #recImg {
-  border: black 1px solid;
+  margin: 6px 8px 13px 18px;
+  border-top-left-radius: 28% 20%;
+  border-top-right-radius: 28% 20%;
+  border-bottom-right-radius: 169% 45%;
+  border-bottom-left-radius: 183% 45%;
+  width: 56%;
+}
+#quote-of-the-day {
+  margin-bottom: 2.5rem;
+  font-size: 46px;
+  font-family: serif;
+  color: lightgoldenrodyellow;
 }
