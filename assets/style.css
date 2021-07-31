@@ -33,9 +33,9 @@ header h1 {
   width: 253%;
   margin-left: 232px;
   margin-bottom: 1.5rem;
-  text-decoration: underline;
   text-underline-position: from-font;
   margin-top: 3px;
+  text-align: left;
 }
 header a {
   width: 30%;
