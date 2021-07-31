@@ -1,6 +1,6 @@
 * {
   /* border: 1px solid black; */
-  margin: 8px 13px;
+  margin: 7px 13px;
   padding: 7px 8px 5px 3px;
   text-align: center;
 }
@@ -14,8 +14,8 @@
 } */
 
 body {
-  margin: 73px 78px 5px 133px;
-  background-image: url(./images/img_cooking2.png);
+  margin: 59px 78px 5px 133px;
+  background-image: url(./images/img_cooking.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -27,42 +27,44 @@ header {
 }
 
 header h1 {
-  color: lightgoldenrodyellow;
+  color: darkgoldenrod;
   font-family: "Avanta Garde", cursive;
   font-size: 8vh;
   width: 253%;
   margin-left: 232px;
   margin-bottom: 1.5rem;
-  text-decoration: underline;
   text-underline-position: from-font;
+  margin-top: 3px;
+  text-align: left;
 }
 header a {
   width: 30%;
 }
 header button {
   background-color: yellow;
-  width: 6vw;
-  height: 5vh;
+  width: 8vw;
+  height: 6vh;
   border-radius: 15%;
   margin-left: -283%;
-  margin-top: 15%;
-  margin-right: 19%;
+  margin-top: 19%;
+  margin-right: -187%;
   cursor: pointer;
   transition: ease 0.3s all;
-  font-size: large;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
 }
 header button:hover {
   background: goldenrod;
 }
 h2 {
   margin: -7px 0 40px 10px;
-  color: lightyellow;
+  color: black;
 }
 h3 {
   font-size: 38px;
   margin-bottom: 2.5rem;
   font-family: monospace;
+  color: black;
 }
 #ing-input {
   width: 100%;
@@ -79,6 +81,8 @@ h3 {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 50px;
+  font-size: 19px;
+  font-weight: 500;
 }
 #submit-btn:hover {
   background: goldenrod;
@@ -86,21 +90,82 @@ h3 {
 #ing-input {
   padding: 15px 15px;
   width: 500px;
+  border-radius: 15px;
 }
 #recipe-name {
   display: none;
 }
 #recImg {
-  margin: 6px 8px 13px 18px;
-  border-top-left-radius: 28% 20%;
-  border-top-right-radius: 28% 20%;
-  border-bottom-right-radius: 169% 45%;
-  border-bottom-left-radius: 183% 45%;
-  width: 56%;
+  margin: 6px 8px 13px 71px;
+  border-radius: 240px 240px;
 }
 #quote-of-the-day {
   margin-bottom: 2.5rem;
   font-size: 46px;
   font-family: serif;
-  color: lightgoldenrodyellow;
+  color: darkgoldenrod;
+}
+#borderColor {
+  background-image: url(./images/cooking_board.jpg);
+  border: white 1px solid;
+  border-radius: 300px;
+  margin: 51px 215px;
+}
+.modal-body span {
+  color: black;
+}
+#modelContent {
+  background: yellow;
+}
+#modelContent span {
+  font-weight: 700;
+  font-size: 25px;
+}
+#exampleModalLabel {
+  color: red;
+  font-size: 30px;
+}
+#home-btn {
+  margin: -9px 16px 13px 135px;
+  font-size: large;
+  font-weight: 500;
+}
+#clear-history-btn {
+  color: red;
+  background-color: yellow;
+  width: 8vw;
+  height: 6vh;
+  font-size: large;
+  font-weight: 500;
+  border-radius: 20px;
+  margin: -8px 177px 96px 836px;
+}
+#clear-history-btn:hover {
+  background: goldenrod;
+}
+#saved-recipes-ls {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: -84px 617px;
+}
+#saved-recipes-ls p {
+  font-size: 30px;
+  color: #f6f6f6;
+  font-weight: 700;
+  text-decoration: underline;
+}
+#saved-recipes-ls button {
+  background-color: yellow;
+  font-size: larger;
+  font-weight: 500;
+  border-radius: 20px;
+}
+#saved-recipes-ls button:hover {
+  background-color: goldenrod;
+  transition: all ease-in-out 0.3s;
+}
+#recImg2 {
+  margin: 81px 8px 13px 71px;
+  border-radius: 295px 240px;
 }

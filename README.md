@@ -18,10 +18,10 @@ THEN I am presented with the recipe card again.
 
 ## Built with
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
+- HTML (Daniel Love)
+- CSS (A'Darius Ellis)
+- JavaScript (Michael Hodges)
+- Bootstrap (A'Darius Ellis)
 
 ## Powered By (API's used)
 https://spoonacular.com/food-api
