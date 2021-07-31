@@ -9,6 +9,8 @@ var ingTextInput = document.getElementById("ing-input");
 var savedRecipes = JSON.parse(localStorage.getItem("saved-recipes") || "[]");
 //variable for the quote element.
 var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
+//variable for error message
+var errorEl = document.getElementById("error");
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
@@ -29,23 +31,24 @@ function getIngTextInput(e) {
 function getRecipe(ings) {
   console.log("Test " + ings);
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=10`
+    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${ings}&number=10`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      //created a random variable based on the api data to get a random recipe of the 3
+      //validation to display that there was an error if no data returned from api.
+      if (data.length === 0) {
+        errorEl.removeAttribute("class", "hide");
+        return;
+      }
+      //Using the Math.random method I created a randomData variable based on the api data to get a random recipe of the 10 recipe objects
       //That get returned via the api.
       var randomData = data[Math.floor(Math.random() * data.length)];
-      console.log(randomData);
       //Saves the recipe name as the local variable recName
       var recName = randomData.title;
-      console.log(recName);
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = randomData.id;
-      console.log(recId);
-      // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       //creating a recipe object variable to use w/ local storage.
       //Name so we can use that on the localstorge.js file to display the name on the
       //dynamically created buttons.  And the id as that is what the api requires to
@@ -75,7 +78,7 @@ function addToSaved(saved) {
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
-  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
+  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey}`)
     .then(function (response) {
       return response.json();
     })

@@ -1,6 +1,10 @@
 //Global Variables
 var apiKey = "apiKey=6e8a92552104438f980149e4f5829086";
 var apiKey2 = "apiKey=c3283e8f374c4709a08d9c074a13d89f";
+var clearHistoryBtnEl = document.getElementById("clear-history-btn");
+
+//Event Listener for clear history button.
+clearHistoryBtnEl.addEventListener("click", clearHistory);
 
 //function to get the recipes in local storage and load them to the page.
 function getLocalStorage() {
@@ -55,3 +59,8 @@ function displayRecipesAgain(recId) {
 window.onload = function () {
   getLocalStorage();
 };
+
+function clearHistory() {
+  localStorage.clear();
+  location.reload();
+}
