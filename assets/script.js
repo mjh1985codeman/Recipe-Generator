@@ -35,17 +35,13 @@ function getRecipe(ings) {
       return response.json();
     })
     .then(function (data) {
-      //created a random variable based on the api data to get a random recipe of the 3
+      //Using the Math.random method I created a randomData variable based on the api data to get a random recipe of the 10 recipe objects
       //That get returned via the api.
       var randomData = data[Math.floor(Math.random() * data.length)];
-      console.log(randomData);
       //Saves the recipe name as the local variable recName
       var recName = randomData.title;
-      console.log(recName);
       // drilled down the data to get the recipe id (id) and saved that to the local var recId.
       var recId = randomData.id;
-      console.log(recId);
-      // drilled down the data to get the recipe name (title) and saved that to the local var recName.
       //creating a recipe object variable to use w/ local storage.
       //Name so we can use that on the localstorge.js file to display the name on the
       //dynamically created buttons.  And the id as that is what the api requires to
