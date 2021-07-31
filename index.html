@@ -17,12 +17,13 @@
       href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
-    <title>Recipe Generator</title>
+    <title>Recipe Sesame</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico.ico">
   </head>
   <body>
     <div id="borderColor">
       <header>
-        <h1 id="generatorTitle">Recipe Generator</h1>
+        <h1 id="generatorTitle">👨🏽‍🍳Recipe Sesame</h1>
         <a href="./saved.html" target="_blank"
           ><button id="saved-btn">Recipe History</button></a
         >
@@ -31,14 +32,17 @@
         <!-- quote of the day section -->
         <div>
           <h3>
-            Every great meal has great inspiration; here's your quote of the
-            day!
+            Every great meal has great inspiration;
+            <br> Here's your quote of the
+            day! </br>
           </h3>
           <div id="quote-of-the-day"></div>
         </div>
       </div>
       <!-- Enter Ingredients section w/ Ingredient submit form -->
-      <h2>Now enter the Ingredients you have to make a meal!</h2>
+      <h2>Please enter your ingredients that you currently have 
+        <br>to generate a recipe</br>
+      </h2>
       <form>
         <input id="ing-input" type="text" placeholder="Flour, Eggs, etc." />
         <div>
@@ -60,7 +64,7 @@
       </div> -->
       <div>
         <img
-          style="width: 75%"
+          style="width: 80%"
           class="hide"
           id="recImg"
           src=""
@@ -77,9 +81,9 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="modelContent">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
             <button
               type="button"
               class="btn-close"

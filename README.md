@@ -8,10 +8,10 @@ App that you can use to generate recipes based on available ingredients.
 
 ## Built with
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
+- HTML (Daniel Love)
+- CSS (A'Darius Ellis)
+- JavaScript (Michael Hodges)
+- Bootstrap (A'Darius Ellis)
 
 ## Challenges
 
