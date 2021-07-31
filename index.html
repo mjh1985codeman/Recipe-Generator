@@ -24,7 +24,7 @@
       <header>
         <h1 id="generatorTitle">Recipe Generator</h1>
         <a href="./saved.html" target="_blank"
-          ><button id="saved-btn">Recipe History</button></a
+          ><button class="buttonFlex" id="saved-btn">Recipe History</button></a
         >
       </header>
       <div>
@@ -60,7 +60,7 @@
       </div> -->
       <div>
         <img
-          style="width: 75%"
+          style="width: 80%"
           class="hide"
           id="recImg"
           src=""
@@ -77,9 +77,9 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="modelContent">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
             <button
               type="button"
               class="btn-close"
@@ -93,7 +93,7 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-secondary, buttonFlex"
               data-bs-dismiss="modal"
             >
               Close

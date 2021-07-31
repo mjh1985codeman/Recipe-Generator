@@ -15,7 +15,7 @@
 
 body {
   margin: 59px 78px 5px 133px;
-  background-image: url(./images/img_cooking2.png);
+  background-image: url(./images/img_cooking.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -35,6 +35,7 @@ header h1 {
   margin-bottom: 1.5rem;
   text-decoration: underline;
   text-underline-position: from-font;
+  margin-top: 3px;
 }
 header a {
   width: 30%;
@@ -45,8 +46,8 @@ header button {
   height: 6vh;
   border-radius: 15%;
   margin-left: -283%;
-  margin-top: 15%;
-  margin-right: -85%;
+  margin-top: 19%;
+  margin-right: -187%;
   cursor: pointer;
   transition: ease 0.3s all;
   font-size: 14px;
@@ -96,11 +97,7 @@ h3 {
 }
 #recImg {
   margin: 6px 8px 13px 71px;
-  border-top-left-radius: 28% 20%;
-  border-top-right-radius: 28% 20%;
-  border-bottom-right-radius: 169% 45%;
-  border-bottom-left-radius: 183% 45%;
-  width: 56%;
+  border-radius: 240px 240px;
 }
 #quote-of-the-day {
   margin-bottom: 2.5rem;
@@ -111,9 +108,64 @@ h3 {
 #borderColor {
   background-image: url(./images/cooking_board.jpg);
   border: white 1px solid;
-  border-radius: 500px;
+  border-radius: 300px;
   margin: 51px 215px;
 }
 .modal-body span {
   color: black;
+}
+#modelContent {
+  background: yellow;
+}
+#modelContent span {
+  font-weight: 700;
+  font-size: 25px;
+}
+#exampleModalLabel {
+  color: red;
+  font-size: 30px;
+}
+#home-btn {
+  margin: -9px 16px 13px 135px;
+  font-size: large;
+  font-weight: 500;
+}
+#clear-history-btn {
+  color: red;
+  background-color: yellow;
+  width: 8vw;
+  height: 6vh;
+  font-size: large;
+  font-weight: 500;
+  border-radius: 20px;
+  margin: -8px 177px 96px 836px;
+}
+#clear-history-btn:hover {
+  background: goldenrod;
+}
+#saved-recipes-ls {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: -84px 617px;
+}
+#saved-recipes-ls p {
+  font-size: 30px;
+  color: #f6f6f6;
+  font-weight: 700;
+  text-decoration: underline;
+}
+#saved-recipes-ls button {
+  background-color: yellow;
+  font-size: larger;
+  font-weight: 500;
+  border-radius: 20px;
+}
+#saved-recipes-ls button:hover {
+  background-color: goldenrod;
+  transition: all ease-in-out 0.3s;
+}
+#recImg2 {
+  margin: 81px 8px 13px 71px;
+  border-radius: 295px 240px;
 }

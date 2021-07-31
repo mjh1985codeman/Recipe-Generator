@@ -41,7 +41,7 @@ function getLocalStorage() {
 }
 
 function displayRecipesAgain(recId) {
-  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
+  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey}`)
     .then(function (response) {
       return response.json();
     })
