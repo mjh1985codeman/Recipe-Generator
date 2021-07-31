@@ -29,7 +29,7 @@ function getIngTextInput(e) {
 function getRecipe(ings) {
   console.log("Test " + ings);
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=3`
+    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=10`
   )
     .then(function (response) {
       return response.json();
