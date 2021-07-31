@@ -62,4 +62,5 @@ window.onload = function () {
 
 function clearHistory() {
   localStorage.clear();
+  location.reload();
 }
