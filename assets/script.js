@@ -31,7 +31,7 @@ function getIngTextInput(e) {
 function getRecipe(ings) {
   console.log("Test " + ings);
   fetch(
-    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey}&ingredients=${ings}&number=10`
+    `https://api.spoonacular.com/recipes/findByIngredients?${apiKey2}&ingredients=${ings}&number=10`
   )
     .then(function (response) {
       return response.json();
@@ -39,9 +39,14 @@ function getRecipe(ings) {
     .then(function (data) {
       //validation to display that there was an error if no data returned from api.
       if (data.length === 0) {
-        errorEl.removeAttribute("class", "hide");
+        // errorEl.removeAttribute("class", "hide");
+        console.log(data);
+        var myModal = $("#exampleModal");
+        console.log(myModal);
+        myModal.modal("show");
         return;
       }
+      console.log(data);
       //Using the Math.random method I created a randomData variable based on the api data to get a random recipe of the 10 recipe objects
       //That get returned via the api.
       var randomData = data[Math.floor(Math.random() * data.length)];
@@ -78,7 +83,7 @@ function addToSaved(saved) {
 
 function getRecipeCard(recId) {
   // api call to get the recipe card URL
-  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey}`)
+  fetch(`https://api.spoonacular.com/recipes/${recId}/card?${apiKey2}`)
     .then(function (response) {
       return response.json();
     })
