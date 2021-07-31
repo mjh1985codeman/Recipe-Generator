@@ -1,6 +1,6 @@
 * {
   /* border: 1px solid black; */
-  margin: 8px 13px;
+  margin: 7px 13px;
   padding: 7px 8px 5px 3px;
   text-align: center;
 }
@@ -14,7 +14,7 @@
 } */
 
 body {
-  margin: 73px 78px 5px 133px;
+  margin: 59px 78px 5px 133px;
   background-image: url(./images/img_cooking2.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@ header {
 }
 
 header h1 {
-  color: lightgoldenrodyellow;
+  color: darkgoldenrod;
   font-family: "Avanta Garde", cursive;
   font-size: 8vh;
   width: 253%;
@@ -41,28 +41,29 @@ header a {
 }
 header button {
   background-color: yellow;
-  width: 6vw;
-  height: 5vh;
+  width: 8vw;
+  height: 6vh;
   border-radius: 15%;
   margin-left: -283%;
   margin-top: 15%;
-  margin-right: 19%;
+  margin-right: -85%;
   cursor: pointer;
   transition: ease 0.3s all;
-  font-size: large;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
 }
 header button:hover {
   background: goldenrod;
 }
 h2 {
   margin: -7px 0 40px 10px;
-  color: lightyellow;
+  color: black;
 }
 h3 {
   font-size: 38px;
   margin-bottom: 2.5rem;
   font-family: monospace;
+  color: black;
 }
 #ing-input {
   width: 100%;
@@ -79,6 +80,8 @@ h3 {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 50px;
+  font-size: 19px;
+  font-weight: 500;
 }
 #submit-btn:hover {
   background: goldenrod;
@@ -86,12 +89,13 @@ h3 {
 #ing-input {
   padding: 15px 15px;
   width: 500px;
+  border-radius: 15px;
 }
 #recipe-name {
   display: none;
 }
 #recImg {
-  margin: 6px 8px 13px 18px;
+  margin: 6px 8px 13px 71px;
   border-top-left-radius: 28% 20%;
   border-top-right-radius: 28% 20%;
   border-bottom-right-radius: 169% 45%;
@@ -102,5 +106,14 @@ h3 {
   margin-bottom: 2.5rem;
   font-size: 46px;
   font-family: serif;
-  color: lightgoldenrodyellow;
+  color: darkgoldenrod;
+}
+#borderColor {
+  background-image: url(./images/cooking_board.jpg);
+  border: white 1px solid;
+  border-radius: 500px;
+  margin: 51px 215px;
+}
+.modal-body span {
+  color: black;
 }
