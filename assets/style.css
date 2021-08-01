@@ -41,7 +41,7 @@ header a {
   width: 30%;
 }
 header button {
-  background-color: yellow;
+  background-color: darkkhaki;
   width: 8vw;
   height: 6vh;
   border-radius: 15%;
@@ -73,7 +73,7 @@ h3 {
   font-size: 20px;
 }
 #submit-btn {
-  background-color: yellow;
+  background-color: darkkhaki;
   width: 8vw;
   height: 5vh;
   border-radius: 15%;
@@ -132,7 +132,7 @@ h3 {
 }
 #clear-history-btn {
   color: red;
-  background-color: yellow;
+  background-color: darkkhaki;
   width: 8vw;
   height: 6vh;
   font-size: large;
@@ -156,7 +156,7 @@ h3 {
   text-decoration: underline;
 }
 #saved-recipes-ls button {
-  background-color: yellow;
+  background-color: darkkhaki;
   font-size: larger;
   font-weight: 500;
   border-radius: 20px;
@@ -166,6 +166,6 @@ h3 {
   transition: all ease-in-out 0.3s;
 }
 #recImg2 {
-  margin: 81px 8px 13px 71px;
+  margin: 81px 8px 13px 70px;
   border-radius: 295px 240px;
 }
