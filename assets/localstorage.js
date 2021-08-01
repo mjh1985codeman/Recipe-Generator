@@ -47,8 +47,9 @@ function displayRecipesAgain(recId) {
     })
     .then(function (data) {
       var recCardURL = data.url;
+      console.log(recCardURL);
       //created variable html elment to get the recCardPicEl
-      var recCardPicEl = document.getElementById("recImg");
+      var recCardPicEl = document.getElementById("recImg2");
       //set the img source as the recCardURL.
       recCardPicEl.src = recCardURL;
       //removed the "hide" class so that the image will show when the recipe is searched.
