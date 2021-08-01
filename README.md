@@ -36,11 +36,12 @@ https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-ex
 
 ## Website:
 
-- https://github.com/mjh1985codeman/Recipe-Generator
+- https://mjh1985codeman.github.io/Recipe-Generator/
+
 
 ## GitHub Repo:
 
-- https://mjh1985codeman.github.io/Recipe-Generator/
+- https://github.com/mjh1985codeman/Recipe-Generator
 
 ## Contribution
 
