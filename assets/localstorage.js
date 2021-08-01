@@ -47,6 +47,7 @@ function displayRecipesAgain(recId) {
     })
     .then(function (data) {
       var recCardURL = data.url;
+      console.log(recCardURL);
       //created variable html elment to get the recCardPicEl
       var recCardPicEl = document.getElementById("recImg");
       //set the img source as the recCardURL.
