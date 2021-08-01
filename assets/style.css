@@ -8,10 +8,7 @@
   display: none;
 }
 
-/* .rec-crd-img {
-    width: 50%;
-    height: 50%;
-} */
+
 
 body {
   margin: 59px 78px 5px 133px;
@@ -21,6 +18,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   color: ghostwhite;
+  display: flex;
 }
 header {
   display: flex;
@@ -111,6 +109,11 @@ h3 {
   border-radius: 300px;
   margin: 51px 215px;
 }
+
+.modal-body{
+  color: black;
+}
+
 .modal-body span {
   color: black;
 }
@@ -169,3 +172,5 @@ h3 {
   margin: 81px 8px 13px 71px;
   border-radius: 295px 240px;
 }
+
+
