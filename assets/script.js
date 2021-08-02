@@ -10,7 +10,7 @@ var savedRecipes = JSON.parse(localStorage.getItem("saved-recipes") || "[]");
 //variable for the quote element.
 var quoteOfTheDayEl = document.getElementById("quote-of-the-day");
 //variable for error message
-var errorEl = document.getElementById("error");
+// var errorEl = document.getElementById("error");
 
 //Variable for Submit Button Element.
 var submitButtonEl = document.getElementById("submit-btn");
@@ -39,7 +39,6 @@ function getRecipe(ings) {
     .then(function (data) {
       //validation to display that there was an error if no data returned from api.
       if (data.length === 0) {
-        // errorEl.removeAttribute("class", "hide");
         console.log(data);
         var myModal = $("#exampleModal");
         console.log(myModal);
