@@ -1,115 +1,126 @@
 * {
-  /* border: 1px solid black; */
-  margin: 7px 13px;
-  padding: 7px 8px 5px 3px;
-  text-align: center;
+margin: 0;
+padding: 0;
+border: 0;
 }
 .hide {
   display: none;
 }
 
-/* .rec-crd-img {
-    width: 50%;
-    height: 50%;
-} */
-
 body {
-  margin: 59px 78px 5px 133px;
   background-image: url(./images/img_cooking.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
   color: ghostwhite;
+  font-size: 16px;
 }
+
 header {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 header h1 {
   color: darkgoldenrod;
   font-family: "Avanta Garde", cursive;
-  font-size: 8vh;
-  width: 253%;
-  margin-left: 232px;
-  margin-bottom: 1.5rem;
-  text-underline-position: from-font;
-  margin-top: 3px;
-  text-align: left;
+  font-size: 40px;
+  float: left;
 }
-header a {
-  width: 30%;
-}
+
 header button {
   background-color: darkkhaki;
-  width: 8vw;
-  height: 6vh;
   border-radius: 15%;
-  margin-left: -283%;
-  margin-top: 19%;
-  margin-right: -187%;
+  border: black 1px solid;
+  padding: 5px;
   cursor: pointer;
   transition: ease 0.3s all;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 500; 
 }
+
 header button:hover {
   background: goldenrod;
 }
+
 h2 {
-  margin: -7px 0 40px 10px;
   color: black;
 }
+
 h3 {
-  font-size: 38px;
-  margin-bottom: 2.5rem;
+  font-size: 20px;
   font-family: monospace;
   color: black;
 }
 #ing-input {
   width: 100%;
-  margin: 10px 5px 0 3px;
+  margin: 10px 5px 0 3px; 
   background: #f6f6f6;
   font-size: 20px;
 }
 #submit-btn {
   background-color: darkkhaki;
-  width: 8vw;
-  height: 5vh;
   border-radius: 15%;
-  margin: 10px 0 10px 3px;
+  border: black 1px solid;
+  padding: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 50px;
-  font-size: 19px;
+  transition: ease 0.3s all;
+  font-size: 20px;
   font-weight: 500;
+  margin-top: 20px;
+  text-align: center;
 }
 #submit-btn:hover {
   background: goldenrod;
 }
 #ing-input {
-  padding: 15px 15px;
-  width: 500px;
   border-radius: 15px;
 }
 #recipe-name {
   display: none;
 }
 #recImg {
-  margin: 6px 8px 13px 71px;
-  border-radius: 240px 240px;
+  max-width: 100%;
+  position: relative;
+  /* display: inline-block; */
+  overflow: hidden;
+  margin: 0;
+  border-radius: 20px;
 }
 #quote-of-the-day {
-  margin-bottom: 2.5rem;
-  font-size: 46px;
+  font-size: 20px; 
   font-family: serif;
   color: darkgoldenrod;
 }
 #borderColor {
   background-image: url(./images/cooking_board.jpg);
-  border: white 1px solid;
-  border-radius: 300px;
-  margin: 51px 215px;
+  opacity: 0.9;
+  border: black 2px solid;
+  max-width: fit-content;
+  border-radius: 100px;
+  background-color: rgba(243, 239, 239, 0.877); 
+  padding: 40px;
+  margin: 100px auto;
+  
+}
+.rec-card-cont {
+  max-width: fit-content;
+  border-radius: 100px;
+  margin: 50px auto;
+}
+.rec-card {
+  max-width: 100%;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  border: black 2px solid;
+  opacity: 0.9;
 }
 
 .modal-body {
@@ -130,46 +141,70 @@ h3 {
   font-size: 30px;
 }
 #home-btn {
-  margin: -9px 16px 13px 135px;
-  font-size: large;
+  margin-top: 15px;
+  background-color: darkkhaki;
+  border-radius: 15%;
+  border: black 1px solid;
+  padding: 5px;
+  cursor: pointer;
+  transition: ease 0.3s all;
+  font-size: 20px;
   font-weight: 500;
 }
+
+#home-btn:hover {
+  opacity: 0.8;
+}
+
 #clear-history-btn {
+  margin-top: 15px;
   color: red;
   background-color: darkkhaki;
-  width: 8vw;
-  height: 6vh;
-  font-size: large;
-  font-weight: 500;
-  border-radius: 20px;
-  margin: -8px 177px 96px 836px;
+  border-radius: 15%;
+  border: black 1px solid;
+  padding: 5px;
+  cursor: pointer;
+  transition: ease 0.3s all;
+  font-size: 20px;
+  font-weight: 500; 
 }
 #clear-history-btn:hover {
-  background: goldenrod;
+  opacity: 0.8;
 }
 #saved-recipes-ls {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: -84px 617px;
+  align-items: center;
 }
 #saved-recipes-ls p {
-  font-size: 30px;
   color: #f6f6f6;
   font-weight: 700;
+  font-size: 24px;
   text-decoration: underline;
+  font-family: "Avanta Garde";
 }
 #saved-recipes-ls button {
   background-color: darkkhaki;
-  font-size: larger;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
   font-weight: 500;
-  border-radius: 20px;
+  border-radius: 10px;
+  max-width: fit-content;
+  margin: 2px;
 }
 #saved-recipes-ls button:hover {
-  background-color: goldenrod;
-  transition: all ease-in-out 0.3s;
+  opacity: 0.8;
+  font-weight: 550;
 }
 #recImg2 {
-  margin: 81px 8px 13px 70px;
-  border-radius: 295px 240px;
+  max-width: 100%;
+  position: relative;
+  /* display: inline-block; */
+  overflow: hidden;
+  margin: 0;
+  border: black 2px solid;
+  opacity: 0.9;
+  border-radius: 20px;
 }
